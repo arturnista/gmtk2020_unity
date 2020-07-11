@@ -6,24 +6,33 @@ public class Item : MonoBehaviour
 {
 
     [SerializeField]
-    private ItemData _data = default;
+    private ItemData m_Data = default;
+    public ItemData Data { get => m_Data; }
     
     private SpriteRenderer _spriteRenderer;
 
     public void Construct(ItemData data)
     {
-        _data = data;
+        m_Data = data;
         _spriteRenderer = GetComponentInChildren<SpriteRenderer>();
 
-        _spriteRenderer.sprite = _data.Sprite;
-        name = _data.Name;
+        _spriteRenderer.sprite = m_Data.Sprite;
+        name = m_Data.Name;
     }
 
     void Awake()
     {
-        if (_data != null)
+        if (m_Data != null)
         {
-            Construct(_data);
+            Construct(m_Data);
+        }
+    }
+
+    void OnDrawGizmos()
+    {
+        if (m_Data != null)
+        {
+            Construct(m_Data);
         }
     }
     

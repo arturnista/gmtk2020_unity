@@ -22,7 +22,7 @@ public class ItemData : ScriptableObject
         itemCreated.GetComponent<Item>().Construct(this);
         if (throwDirection != Vector3.zero)
         {
-            itemCreated.GetComponent<Rigidbody2D>().AddForce(throwDirection * 100f, ForceMode2D.Impulse);
+            itemCreated.GetComponent<Rigidbody2D>().AddForce(throwDirection * 25f, ForceMode2D.Impulse);
         }
     }
 

@@ -22,10 +22,12 @@ public class PlayerInput : MonoBehaviour
             Input.GetAxisRaw("Horizontal"),
             Input.GetAxisRaw("Vertical")
         );
-        Vector3 lookDirection = _camera.ScreenToWorldPoint(Input.mousePosition) - transform.position;
         
+        if (inputDirection.sqrMagnitude != 0)
+        {
+            _look.LookDirection = inputDirection;
+        }
         _movement.MoveDirection = inputDirection;
-        _look.LookDirection = inputDirection;
     }
     
 }

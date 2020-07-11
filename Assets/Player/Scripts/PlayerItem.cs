@@ -5,19 +5,27 @@ using UnityEngine;
 public class PlayerItem : MonoBehaviour
 {
 
-    private ItemData _holdingItem;
+    [SerializeField]
+    private SpriteRenderer _itemHolderSprite;
+
+    private ItemData _currentItem;
+
+    void Awake()
+    {
+        _itemHolderSprite.gameObject.SetActive(false);
+    }
     
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            if (_holdingItem == null)
+            if (_currentItem == null)
             {
                 PickupItem();
             }
             else
             {
-                
+                ThrowItem();
             }
         }
     }
@@ -25,10 +33,25 @@ public class PlayerItem : MonoBehaviour
     void PickupItem()
     {
         Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, 1f, 1 << LayerMask.NameToLayer("Item"));
-        foreach (var item in colliders)
+        foreach (var collider in colliders)
         {
-            
+            Item item = collider.GetComponent<Item>();
+            if (item)
+            {
+                _currentItem = item.Data;   
+                _itemHolderSprite.gameObject.SetActive(true);
+                _itemHolderSprite.sprite = _currentItem.Sprite;
+                Destroy(collider.gameObject);
+                break;
+            }
         }
+    }
+
+    void ThrowItem()
+    {
+        _itemHolderSprite.gameObject.SetActive(false);
+        _currentItem.Create(transform.position, transform.right);
+        _currentItem = null;
     }
 
 }
