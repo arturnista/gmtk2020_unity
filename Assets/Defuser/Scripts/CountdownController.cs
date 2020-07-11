@@ -38,7 +38,7 @@ public class CountdownController : MonoBehaviour
 
         if(time <= 0)
         {
-            textTimer.text = "00:00";
+            textTimer.text = "BOOM";
         }
     }
 }
