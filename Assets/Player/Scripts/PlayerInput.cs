@@ -25,7 +25,7 @@ public class PlayerInput : MonoBehaviour
         Vector3 lookDirection = _camera.ScreenToWorldPoint(Input.mousePosition) - transform.position;
         
         _movement.MoveDirection = inputDirection;
-        _look.LookDirection = lookDirection;
+        _look.LookDirection = inputDirection;
     }
     
 }
