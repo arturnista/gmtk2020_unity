@@ -41,7 +41,7 @@ public class Movement : MonoBehaviour
         
         _rigidbody.velocity = _moveVelocity + ExtraVelocity;
 
-        ExtraVelocity = Vector3.MoveTowards(ExtraVelocity, Vector3.zero, 150f * Time.deltaTime);
+        ExtraVelocity = Vector3.MoveTowards(ExtraVelocity, Vector3.zero, 100f * Time.deltaTime);
 
     }
 

@@ -8,7 +8,8 @@ public class PlayerItem : MonoBehaviour
     [SerializeField]
     private SpriteRenderer _itemHolderSprite;
 
-    private ItemData _currentItem;
+    private ItemData m_CurrentItem;
+    public ItemData CurrentItem { get => m_CurrentItem; }
 
     void Awake()
     {
@@ -19,7 +20,7 @@ public class PlayerItem : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            if (_currentItem == null)
+            if (m_CurrentItem == null)
             {
                 PickupItem();
             }
@@ -38,9 +39,9 @@ public class PlayerItem : MonoBehaviour
             Item item = collider.GetComponent<Item>();
             if (item)
             {
-                _currentItem = item.Data;   
+                m_CurrentItem = item.Data;   
                 _itemHolderSprite.gameObject.SetActive(true);
-                _itemHolderSprite.sprite = _currentItem.Sprite;
+                _itemHolderSprite.sprite = m_CurrentItem.Sprite;
                 Destroy(collider.gameObject);
                 break;
             }
@@ -50,8 +51,8 @@ public class PlayerItem : MonoBehaviour
     void ThrowItem()
     {
         _itemHolderSprite.gameObject.SetActive(false);
-        _currentItem.Create(transform.position, transform.right);
-        _currentItem = null;
+        m_CurrentItem.Create(transform.position, transform.right);
+        m_CurrentItem = null;
     }
 
 }
