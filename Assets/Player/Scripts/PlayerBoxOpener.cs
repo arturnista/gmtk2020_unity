@@ -19,7 +19,7 @@ public class PlayerBoxOpener : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.F) && savedCollider != null)
         {
             Debug.Log("aperto");
-            _hotkeyText.text = "";
+            // _hotkeyText.text = "";
             toolsPrefabs[Random.Range(0, toolsPrefabs.Count)].Create(transform.position);
             savedCollider.tag = "Untagged";
             savedCollider = null;
@@ -30,7 +30,7 @@ public class PlayerBoxOpener : MonoBehaviour
     {
         if(collider2D.tag == "ItemBox")
         {
-            _hotkeyText.text = "F";
+            // _hotkeyText.text = "F";
             savedCollider = collider2D;
             Debug.Log("colidiu");
         }
