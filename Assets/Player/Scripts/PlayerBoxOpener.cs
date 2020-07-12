@@ -21,7 +21,8 @@ public class PlayerBoxOpener : MonoBehaviour
             Debug.Log("aperto");
             _hotkeyText.text = "";
             toolsPrefabs[Random.Range(0, toolsPrefabs.Count)].Create(transform.position);
-            Destroy(savedCollider.gameObject);
+            savedCollider.tag = "Untagged";
+            savedCollider = null;
         }
     }
     
