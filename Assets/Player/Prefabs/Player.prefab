@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3692652300234124306}
   - component: {fileID: 7071128967580162330}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ItemHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -91,7 +91,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7469833582693669630}
   - component: {fileID: 7469833582693669629}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -179,7 +179,7 @@ GameObject:
   - component: {fileID: 353000499821584201}
   - component: {fileID: 1017543996}
   - component: {fileID: 1017543988}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
