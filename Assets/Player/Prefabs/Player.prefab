@@ -4942,6 +4942,7 @@ GameObject:
   - component: {fileID: 353000499821584201}
   - component: {fileID: 1017543996}
   - component: {fileID: 1017543988}
+  - component: {fileID: 7500254880857241847}
   m_Layer: 11
   m_Name: Player
   m_TagString: Player
@@ -5098,3 +5099,17 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 07453ccbbd5a4304ea68fd62d816e9c2, type: 2}
   - {fileID: 11400000, guid: 0f7e6d912dc88144a894756ee01d9b5b, type: 2}
   - {fileID: 11400000, guid: fb27dd6084b0e304fbc5030056d8ce4b, type: 2}
+--- !u!114 &7500254880857241847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7469833582888374737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a648bd11ca627448a4bd1da07fa79c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _dashSpeed: 20
+  _cooldown: 1
